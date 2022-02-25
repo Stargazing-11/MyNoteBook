@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My NoteBook</title>
+    <link rel="stylesheet" href="../static/Css/Styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body{
+            background: linear-gradient(#4671EA, #AC34E7);
+        }
+        header{
+            margin-bottom: 90px;
+        }
+        .wrapper{
+            width: 37vw;
+            background-color: cornsilk;
+            border-radius: 5px;
+            padding: 25px 25px 30px;
+        }
+        .tedt{
+            font-size: medium;
+        }
+        .card{
+            background-color: rgb(30, 92, 68);
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Top navigation -->
+        <!-- <div class="topnav">
+  
+          <a href="#news">Home</a>
+  
+          Right-aligned links -->
+          <!-- <div class="topnav-right">
+            <a href="#search">Login</a>
+            <a href="#about">LogOut</a>
+          </div>
+        </div> --> 
+      </header>
+      <main>
+        <div class="container container1">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                  <h2 class="container">Add New Note</h2>
+                  <div class="card-body">
+                      <form th:action="@{/notes/addedNewNote/{catagoryid}(catagoryid=${currentCatagory.id})}" th:object="${note}" method="post">
+                          <h2 th:text="${currentCatagory.name}"></h2>
+                          <div class="form-group">
+                              <label for="">Catagory Name</label>
+                              <input type="text" th:field="*{name}" class="form-control" placeholder="Enter Note Name">
+                          </div>
+                          <div class="form-group">
+                              <label for="">Date</label>
+                              <input type="text" th:field="*{date}" class="form-control" placeholder="Enter Date of note Created">
+                          </div>
+                          <div class="form-group">
+                            <label for="">Location</label>
+                            <input type="text" th:field="*{location}" class="form-control" placeholder="Enter Location Name">
+                        </div>
+                        <div class="form-group border-dark">
+                            <h3 class="tedt">Add Note Content here</h3>
+                            <textarea placeholder="Type Note Content" class="wrapper" th:field="*{noteContent}"></textarea>
+                        </div>
+                          <div class="box-footer">
+                              <button type="submit" class="btn btn-primary">
+                                  Submit
+                              </button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </main>
+</body>
+</html>

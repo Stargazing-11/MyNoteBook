@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detail Note Content</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: rgb(77, 101, 124);
+            color: rgb(0, 0, 0);
+            
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        header{
+            margin-bottom: 100px;
+        }
+        table{
+            color: whitesmoke;
+        }
+        /* h1{
+            text-decoration: underline; 
+            font-size: 7vh;  
+        }
+        p{
+            font-size: 3vw;
+            border: 3px whitesmoke dotted;
+        } */
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <div class="container card">
+        <div class="content card-body">
+            <h1 th:text="${currentCatagory.name}" class="card-title"></h1>
+            <p th:text="${currentNote.noteContent}" class="card-text"></p>
+        </div>
+        
+    </div>
+</body>
+</html>

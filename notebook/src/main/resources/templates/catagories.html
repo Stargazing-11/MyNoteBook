@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Catagories</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: rgb(77, 101, 124);
+            color: rgb(0, 0, 0);
+        }
+        header{
+            margin-bottom: 100px;
+        }
+        table{
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <header class="container">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+    </header>
+    <main>
+        <div th:if="${catagories.empty}" class="container">
+            <h2>No catagories Created</h2>
+        </div>
+        <div class="container">
+            <h2>Choose Catagories</h2>
+            <table class=" table  table-bordered table-hover table-dark ">
+                <tr>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th >Catagory Name</th>
+                            <th>Date Created</th>
+                            <th>Notes In this Catagory</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each = "catagory: ${catagories}">
+                            <td th:text = "${catagory.name}">First Name</td>
+                            <td th:text = "${catagory.date}">Second Place</td>
+                            <!-- <td> <a th:href="@{/currentCatagory/editCatagory/listNotes/{catagoryid}(catagoryid=${catagory.id})}" class="btn btn-primary">ViewNotes</a></td> -->
+                            <td> <a th:href="@{/notes/showNotes/{catagoryid}(catagoryid=${catagory.id})}" class="btn btn-primary">ViewNotes</a></td>
+                        </tr>
+
+                    </tbody>
+                </tr>
+            </table>
+            <a  th:href="@{/currentCatagory/editCatagory/addCatagory}" class="btn btn-primary">Add New Catagory</a>
+        </div>
+    </main>
+</body>
+</html>

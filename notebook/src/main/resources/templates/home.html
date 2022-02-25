@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My NoteBook</title>
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      body{
+        color: whitesmoke;
+      }
+      h2{
+        color: orangered;
+        text-shadow:1px 0px 1px whitesmoke;
+        font-weight: bolder;
+      }
+    .topnav-centered {
+      font-weight: bolder;
+      font-size: 1.5vw;
+      position: absolute;
+      top: 53%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .navs{
+      /* font-weight: bolder;
+      font-size: 1.5vw; */
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    </style>
+</head>
+
+<body th:style="'background: url(/Image/pexels-oleg-magni-1040499.jpg) no-repeat center center fixed;'">
+    <main>
+      <div class="topnav-centered container">
+        <h2>Welcome To NoteBook</h2>
+        <p>Here you Can Store Different Kinds of messages catagorized by catagories you wanted</p>
+      </div>
+      <div class="topnav-centered navs ">
+        <a href="" class="btn btn-primary " >Login</a><br>
+        <a href="" class="btn btn-primary ">Sign Up</a>
+      </div>
+    </main>
+</body>
+</html>

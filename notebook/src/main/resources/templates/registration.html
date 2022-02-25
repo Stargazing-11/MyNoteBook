@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Sign Up Page</title>
+</head>
+
+<body>
+    <div class="container">
+    <form method="POST" th:action="@{/register}" id="registerForm">
+        <label class="form-label" for="username">Username: </label>
+        <input class="form-control" type="text" name="username" id="username" />
+        <label class="form-label" for="password">Password: </label>
+        <input class="form-control" type="password" name="password" id="password" />
+        <label class="form-label" for="confirm">Confirm password: </label>
+        <input class="form-control" type="password" name="confirm" id="confirm"/>
+        <label class="form-label" for="fullName">Full name: </label>
+        <input class="form-control" type="text" name="fullname" id="fullName" />
+        <label class="form-label" for="phone">Phone: </label>
+        <input class="form-control" type="text" name="phone" id="phone" />
+        <input class="btn btn-primary my-2" type="submit" value="Register" />
+      </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
